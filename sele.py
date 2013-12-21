@@ -15,19 +15,18 @@ browser.find_element_by_xpath("//a[@title='View an unofficial copy of your acade
 #wait.until(lambda driver: browser.find_elements_by_id('ptifrmtgtframe'))
 browser.switch_to_frame('TargetContent')
 browser.find_element_by_id('GO').click()
-#print browser.page_source.encode('utf-8')
-browser.switch_to_default_content()
-#wait.until(lambda driver: browser.find_element_by_id('ptifrmtgtframe').find_element_by_id('M_SR_TSCRPT_HDR_MESSAGE_PARM1'))
-#print "111"
-#browser.save_screenshot('screenie.png')
-#browser.quit()
 
-time.sleep(15)
-#browser.save_screenshot('screenie1.png')
+#wait.until(lambda driver: browser.find_element_by_id('ptifrmtgtframe').find_element_by_id('M_SR_TSCRPT_HDR_MESSAGE_PARM1'))
+
+time.sleep(10)
+
 browser.switch_to_default_content()
 browser.switch_to_frame('TargetContent')
 #print browser.page_source.encode('utf-8')
-print browser.page_source.encode('utf-8')
-#print browser.find_element_by_id('ptifrmtgtframe')
 
-#print browser.page_source.encode('utf-8')
+results = browser.find_elements_by_xpath("//*[contains(@id, 'win0divDERIVED_TSCRPT_TSCRPT_COMP_DATA')]")
+
+for r in results:
+    print r.text
+
+browser.quit()
