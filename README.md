@@ -1,4 +1,4 @@
 wolverineGradeGraber
 ====================
 
-Grabs grades from wolverine
+This program can be used to grab grades from Wolverine Access. 
