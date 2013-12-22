@@ -1,5 +1,6 @@
 import smtplib
 server = smtplib.SMTP('smtp.gmail.com', 587)
+server.starttls()
  
 #Next, log in to the server
 server.login("johnestar.wag@gmail.com", "woshijyx16856188")
