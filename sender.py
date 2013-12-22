@@ -1,10 +1,13 @@
 import smtplib
-server = smtplib.SMTP('smtp.gmail.com', 587)
-server.starttls()
- 
-#Next, log in to the server
-server.login("johnestar.wag@gmail.com", "woshijyx16856188")
- 
-#Send the mail
-msg = "\nHello!" # The /n separates the message from the headers
-server.sendmail("you@gmail.com", "ethanjyx@umich.edu", msg)
+
+class EmailSender:
+	def __init__(self, username, password, target):
+		self.server = smtplib.SMTP('smtp.gmail.com', 587)
+		self.server.starttls()
+		self.server.login(username, password)
+		self.target = target
+		return
+
+	def sendNotification(self, msg):
+		self.server.sendmail("you", self.target, msg)
+		return
