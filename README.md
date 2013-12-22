@@ -1,7 +1,7 @@
 wolverineGradeGraber
 ====================
 
-This program can be used to grab grades from Wolverine Access, save it to your local disk, and send email notifications if there are changes.
+This program will grab grades from Wolverine Access every 10 seconds, save it to your local disk, and send email notifications if there are changes.
 
 ### Installation
 Some simple things you need to run: 
@@ -11,7 +11,7 @@ Some simple things you need to run:
 
 Scripts for installing selenium are in `install.sh`, run it by `$ sh install.sh`
 
-I'm always ready to help anyone who wants to try.
+####I'm always ready to help anyone who wants to try.
 
 ### Get it running
 
