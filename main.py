@@ -1,6 +1,8 @@
 from selenium import webdriver
 import time
 import sys
+import os
+import filecmp
 #import selenium.webdriver.support.ui as ui
 
 browser = webdriver.Firefox()
@@ -26,7 +28,21 @@ browser.switch_to_frame('TargetContent')
 
 results = browser.find_elements_by_xpath("//*[contains(@id, 'win0divDERIVED_TSCRPT_TSCRPT_COMP_DATA')]")
 
+transcript = ''
+
 for r in results:
-    print r.text
+    transcript += r.text + '\n'
+
+f = open('transcript.txt', 'w')
+f.write(transcript)
+f.close()
+
+if os.path.isfile('oldtranscript.txt'): # old transcript exists
+	if not filecmp.cmp('transcript.txt', 'oldtranscript.txt'): # new grades have been entered
+		#send_email()
+		print ''
+		os.system('rm oldtranscript.txt; mv transcript.txt oldtranscript.txt')
+else: # old transcript does not exist, which means this is the first time running this script
+	os.system('mv transcript.txt oldtranscript.txt; rm transcript.txt')
 
 browser.quit()
