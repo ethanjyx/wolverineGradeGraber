@@ -31,5 +31,5 @@ With the help of selenium, the program will grab the grades from Wolverine Acces
 
 `oldtranscript.txt` will always contain the latest transcript. Msg sent will simply be 'New grade has been posted!'
 
-### Final words
-Wish everybody great grades and Merry Christmas!...
+### License
+GPL v3.0 [http://choosealicense.com/licenses/gpl-3.0/]
