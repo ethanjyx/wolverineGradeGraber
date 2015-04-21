@@ -11,8 +11,6 @@ Some simple things you need to run:
 
 Scripts for installing selenium are in `install.sh`, run it by `$ sh install.sh`
 
-####I'm always ready to help anyone who wants to try.
-
 ### Get it running
 
 In command line: `python main.py UNIQNAME PW EMAIL_SENDER EMAIL_PW EMAIL_RECEIVER`
